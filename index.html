@@ -248,24 +248,60 @@
     <textarea id="comment" placeholder="Additional details..." rows="4" style="width:100%; padding:10px; margin:10px 0;"></textarea>
 
     <button type="submit" class="btn" style="width:100%;">
-      💬 Send via WhatsApp
+      💬 Send 
     </button>
 
   </form>
-</section>
-
-  <!-- ===== CONTACT ===== -->
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 Phone: 068 535 6676</p>
-    <p>📧 Email: info@orientdoors.co.za</p>
-    <p>📍 Belhar, Cape Town, South Africa</p>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>&copy; 2026 Orient Doors. All rights reserved.</p>
-  </footer>
+    
+    </section>
+    
+      <!-- ===== CONTACT ===== -->
+      <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>📞 Phone: 068 535 6676</p>
+        <p>📧 Email: info@orientdoors.co.za</p>
+        <p>📍 Belhar, Cape Town, South Africa</p>
+      </section>
+    
+      <!-- ===== FOOTER ===== -->
+      <footer>
+        <p>&copy; 2026 Orient Doors. All rights reserved.</p>
+      </footer>
+    
+      <script>
+    document.getElementById("quoteForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+    
+      // Get values
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const request = document.getElementById("request").value;
+      const comment = document.getElementById("comment").value.trim();
+    
+      // Basic validation (extra safety)
+      if (!name || !phone || !request) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+    
+      // Build message (encoded properly)
+      const message = encodeURIComponent(
+        `Hi Orient Doors,
+    
+    Name: ${name}
+    Contact Number: ${phone}
+    Request: ${request}
+    Comment: ${comment || "N/A"}`
+      );
+    
+      // Your WhatsApp number (SA format: no +)
+      const whatsappNumber = "27798526921";
+    
+      // Open WhatsApp
+      const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+      window.open(url, "_blank");
+    });
+    </script>
 
 </body>
 </html>
