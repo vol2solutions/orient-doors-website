@@ -68,12 +68,19 @@
     }
 
       .hero-img {
-      width: 600px;
-      height: 500px;
+      width: 100%;
+      height: 350px;
+      max-width: 500px
       background: url("images/O'rient Doors logo design.png") center/cover;
       border-radius: 12px;
       border: 4px solid #4caf50;
     }
+
+   /* .hero-img {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+}*/
 
     /* ===== SERVICES ===== */
     .features {
@@ -147,9 +154,78 @@
 
     /* ===== RESPONSIVE ===== */
     @media(max-width: 768px) {
-      .hero { flex-direction: column; text-align: center; }
-      .about { flex-direction: column; }
-    }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    padding: 10px 5%;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  nav ul {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  nav img {
+    height: 60px; /* smaller logo for mobile */
+    top: 0;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 40px 5%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-img {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+}
+
+  /* ===== SECTIONS ===== */
+  .features,
+  .about,
+  .cta,
+  .contact {
+    padding: 40px 5%;
+  }
+
+  /* ===== ABOUT ===== */
+  .about {
+    flex-direction: column;
+  }
+
+  .about-img {
+    width: 100%;
+    height: 250px;
+  }
+
+  /* ===== FORM ===== */
+  form {
+    width: 100%;
+  }
+
+  input, select, textarea {
+    font-size: 16px; /* prevents zoom on iOS */
+  }
+
+  /* ===== BUTTON ===== */
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
   </style>
 </head>
 
